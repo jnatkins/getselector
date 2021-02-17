@@ -61,12 +61,13 @@ const updateIcon = isPressed =>
     );
   });
 
-  chrome.tabs.onActivated.addListener(async tab => {
+  chrome.tabs.onUpdated.addListener(async tab => {
     selectedTabId = tab.id;
     toggle();
   });
 
-  chrome.tabs.onUpdated.addListener(async tab => {
+
+  chrome.tabs.onActivated.addListener(async tab => {
     selectedTabId = tab.id;
     toggle();
   });
